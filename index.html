@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA4 Test Page</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXX');
+  </script>
+</head>
+<body>
+  <h1>Google Analytics 4 Test Page</h1>
+  <p>This is a test page to verify GA4 events and tracking.</p>
+
+  <!-- Test Buttons to send events -->
+  <button id="eventButton1">Click me for Event 1</button>
+  <button id="eventButton2">Click me for Event 2</button>
+
+  <script>
+    // Send a custom event when the first button is clicked
+    document.getElementById('eventButton1').addEventListener('click', function() {
+      gtag('event', 'button_click', {
+        'event_category': 'Test',
+        'event_label': 'Event 1 Clicked',
+        'value': 1
+      });
+      alert('Event 1 sent!');
+    });
+
+    // Send a custom event when the second button is clicked
+    document.getElementById('eventButton2').addEventListener('click', function() {
+      gtag('event', 'button_click', {
+        'event_category': 'Test',
+        'event_label': 'Event 2 Clicked',
+        'value': 2
+      });
+      alert('Event 2 sent!');
+    });
+  </script>
+</body>
+</html>
